@@ -1,0 +1,40 @@
+@startuml
+
+left to right direction
+actor "Route Coordinator" as RC
+actor "Mobile Library Staff" as MS 
+actor "Driver" as DR 
+actor "Branch Staff" as BS 
+actor "Community Coordinator" as CC 
+actor "Library Management System" as LMS <<system>>
+
+rectangle "Mobile Library Support Service" {
+
+    usecase "UC01 Plan Route" as UC01
+    usecase "UC02 Adjust Route visit" as UC02
+    usecase "UC03 Record Request" as UC03
+    usecase "UC04 Prepare and verify\nVisit Load" as UC04
+    usecase "UC05 Record Visit Status" as UC05
+    usecase "UC06 Record Loans and\nRetuns at Stop" as UC06
+    usecase "UC07 Release Requested Item" as UC07
+    usecase "UC08 Reconcile Offline\ntransactions" as UC08
+
+}
+
+RC -- UC01
+RC -- UC02
+RC -- UC08
+BS -- UC03
+MS -- UC03
+MS -- UC04
+MS -- UC05
+DR -- UC05
+MS -- UC06
+MS -- UC07
+UC05 -- CC
+UC03 -- LMS
+UC06 -- LMS
+UC08 -- LMS
+
+
+@enduml
