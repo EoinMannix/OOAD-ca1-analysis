@@ -1,0 +1,101 @@
+@startuml
+hide circle
+hide methods
+skinparam ClassAttributeIconSize 0
+
+class Borrower {
+    name
+    contactDetails
+}
+
+class Title {
+    titleName 
+    author
+    edition
+}
+
+class Item {
+    itemCode
+    status
+}
+
+class Request {
+    requestDate
+    requestType
+    topic
+    status
+    alternativeDecision
+}
+
+class Loan {
+    loanDate
+    dueDate
+    returnDate
+    recordedOffline     
+}
+
+class Route {
+    routeName
+    frequency
+}
+
+class Stop {
+    stopName
+    location
+}
+
+class RouteStop {
+    stopOrder
+    usualDay
+    arrivalTime
+    visitDuration
+}
+
+class RouteVisit {
+    visitDate
+    isReplacementVehicle
+}
+
+ class StopVisit {
+    status
+    reason
+ }
+
+ class Vehicle {
+    registration
+    capacity
+ }
+
+ class LoadListEntry {
+    loaded
+ }
+
+ class CollectionPermission <<Provisional>> {
+    collectorName
+    validUntil
+ }
+
+ class Notification <<Provisional>> {
+    sentDate
+    message
+ }
+
+Borrower "1" -- "0..*" Request : makes >
+Borrower "1" -- "0..*" Loan : has >
+Borrower "1" -- "0..*" CollectionPermission : gives >
+Title "1" -- "1..*" Item : has copies >
+Request "0..*" -- "0..1" Title : asks for >
+Request "0..1" -- "0..1" Item : fulfilled by >
+Item "1" -- "0..*" Loan : lent in >
+Route "1" -- "1..*" RouteStop : includes >
+Stop "1" -- "0..*" RouteStop : placed in >
+Route "1" -- "0..*" RouteVisit : run as >
+Vehicle "1" -- "0..*" RouteVisit : used for >
+RouteVisit "1" -- "1..*" StopVisit : contains >
+Stop "1" -- "0..*" StopVisit : visited in >
+RouteVisit "1" -- "0..*" LoadListEntry : has >
+Item "1" -- "0..*" LoadListEntry : listed in >
+StopVisit "1" -- "0..*" Loan : records >
+StopVisit "1" -- "0..*" Notification : triggers > 
+
+@enduml
