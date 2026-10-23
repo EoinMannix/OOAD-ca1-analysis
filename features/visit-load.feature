@@ -12,5 +12,5 @@ Feature: Prepare and verify visit Load
     Scenario: Item linked to a different route visit is not loaded 
         Given item B-2050 is linked to route visit RV-0415
         When staff identify item B-2050 while loading RV-0412
-        Then item B-2050 is not recoreded as loaded for RV-0412
+        Then item B-2050 is not recorded as loaded for RV-0412
         And staff are told the item belongs to route visit RV-0415

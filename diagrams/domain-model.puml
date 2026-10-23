@@ -36,7 +36,6 @@ class Loan {
 
 class Route {
     routeName
-    frequency
 }
 
 class Stop {
@@ -45,6 +44,7 @@ class Stop {
 }
 
 class RouteStop {
+    frequency
     stopOrder
     usualDay
     arrivalTime

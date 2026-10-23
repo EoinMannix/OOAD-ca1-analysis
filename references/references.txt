@@ -1,0 +1,7 @@
+I didnt use many reference for this project as I found using the labs to be sufficient in completing the project.
+I did however use one source to assist me with the creation of PlantUML diagrams which was -> https://pdf.plantuml.net/1.2020.22/PlantUML_Language_Reference_Guide_en.pdf
+I also think I should reference the use of AI which helped with some aspects of the project such as:
+    -	Report structure
+    -	Better wording in the in and out of scope
+    -   Grammer and spelling errors
+    -	Gherkin Errors

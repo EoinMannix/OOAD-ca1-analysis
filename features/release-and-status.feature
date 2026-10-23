@@ -18,10 +18,10 @@ Feature: Release requested items and record visit status
             Given borrower BW-77 has item B-1002 linked to stop ST-07
             And community coordinator CC-03 is the contact for stop ST-07
             When the driver records stop ST-07 as <status>
-            Then borrower BR-77 is notified that the visit is <status>
+            Then borrower BW-77 is notified that the visit is <status>
             And the community coordinator CC-03 is told the visit is <status>
 
-            Status examples are:
+            Examples:
                 status
                 moved
                 cancelled

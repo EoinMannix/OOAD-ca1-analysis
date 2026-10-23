@@ -15,7 +15,7 @@ rectangle "Mobile Library Support Service" {
     usecase "UC03 Record Request" as UC03
     usecase "UC04 Prepare and Verify\n Visit Load" as UC04
     usecase "UC05 Record Visit Status" as UC05
-    usecase "UC06 Record Loans and\n Retuns at Stop" as UC06
+    usecase "UC06 Record Loans and\n Returns at Stop" as UC06
     usecase "UC07 Release Requested Item" as UC07
     usecase "UC08 Reconcile Offline\n Transactions" as UC08
 
